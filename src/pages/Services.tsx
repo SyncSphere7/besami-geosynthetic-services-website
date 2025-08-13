@@ -2,6 +2,14 @@ import { Layers, Building2, Zap, Droplets, TreePine, CheckCircle2, ArrowRight } 
 import { Link } from "react-router-dom";
 
 const Services = () => {
+  // Function to create anchor IDs from service titles
+  const createAnchorId = (title: string) => {
+    return title.toLowerCase()
+      .replace(/&/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '');
+  };
+
   const services = [
     {
       icon: Layers,
@@ -76,7 +84,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="pt-16">
+    <div className="pt-24">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
@@ -96,6 +104,7 @@ const Services = () => {
             {services.map((service, index) => (
               <div 
                 key={service.title}
+                id={createAnchorId(service.title)}
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-slide-up ${
                   index % 2 === 1 ? 'lg:grid-flow-dense' : ''
                 }`}

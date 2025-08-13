@@ -1,5 +1,11 @@
 import { Building2, MapPin, CheckCircle2, Clock, Calendar, DollarSign, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import hdpeHospital from "@/assets/projects/hdpe-installation-1.jpg";
+import residentialComplex from "@/assets/projects/construction-work-1.jpg";
+import irrigationCanal from "@/assets/projects/infrastructure-1.jpg";
+import officeBuilding from "@/assets/projects/construction-work-2.jpg";
+import oilGasFacility from "@/assets/projects/project-1.jpg";
+import resortLandscaping from "@/assets/services/landscaping.jpg";
 
 const Projects = () => {
   const projects = [
@@ -20,7 +26,8 @@ const Projects = () => {
         "Comprehensive quality testing",
         "EHS compliance certification"
       ],
-      completedDate: "March 2024"
+      completedDate: "March 2024",
+      image: hdpeHospital
     },
     {
       title: "Pearl Gardens Residential Complex",
@@ -39,7 +46,8 @@ const Projects = () => {
         "Waterproofing and drainage systems",
         "Recreational facility construction"
       ],
-      expectedCompletion: "December 2024"
+      expectedCompletion: "December 2024",
+      image: residentialComplex
     },
     {
       title: "Agricultural Irrigation Canal Project",
@@ -58,7 +66,8 @@ const Projects = () => {
         "Erosion control measures",
         "Farmer training programs"
       ],
-      completedDate: "August 2024"
+      completedDate: "August 2024",
+      image: irrigationCanal
     },
     {
       title: "Corporate Office Building",
@@ -77,7 +86,8 @@ const Projects = () => {
         "Landscaped parking areas",
         "Sustainable building practices"
       ],
-      completedDate: "June 2024"
+      completedDate: "June 2024",
+      image: officeBuilding
     },
     {
       title: "Oil & Gas Facility Containment",
@@ -96,7 +106,8 @@ const Projects = () => {
         "Environmental protection measures",
         "Regulatory compliance certification"
       ],
-      completedDate: "January 2024"
+      completedDate: "January 2024",
+      image: oilGasFacility
     },
     {
       title: "Luxury Resort Landscaping",
@@ -115,7 +126,8 @@ const Projects = () => {
         "Outdoor lighting systems",
         "Sustainable irrigation systems"
       ],
-      expectedCompletion: "February 2025"
+      expectedCompletion: "February 2025",
+      image: resortLandscaping
     }
   ];
 
@@ -127,7 +139,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="pt-16">
+    <div className="pt-24">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
@@ -184,12 +196,20 @@ const Projects = () => {
                 className="bg-card rounded-xl shadow-card hover:shadow-elegant transition-all duration-300 overflow-hidden animate-scale-in"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="p-8">
-                  {/* Project Header */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="px-3 py-1 bg-corporate-light text-corporate-dark rounded-full text-sm font-medium">
+                {/* Project Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 bg-white/90 text-corporate-dark rounded-full text-sm font-medium">
                       {project.category}
                     </span>
+                  </div>
+                  <div className="absolute top-4 right-4">
                     <span className={`px-3 py-1 rounded-full text-sm font-medium flex items-center space-x-1 ${
                       project.status === 'Completed' 
                         ? 'bg-green-100 text-green-800' 
@@ -208,6 +228,9 @@ const Projects = () => {
                       )}
                     </span>
                   </div>
+                </div>
+                
+                <div className="p-8">
 
                   {/* Project Title & Client */}
                   <h3 className="text-2xl font-heading font-bold text-corporate-dark mb-3">

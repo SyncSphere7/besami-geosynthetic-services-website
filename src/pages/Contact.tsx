@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import PageMeta from "@/components/seo/PageMeta";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -57,14 +58,14 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone Numbers",
-      details: ["0752 554 558", "0775 980 879"],
+      details: ["+256 752 554 558", "+256 775 980 879"],
       link: "tel:+256752554558"
     },
     {
       icon: Mail,
       title: "Email Address",
-      details: ["info@besamigeosyntheticservices.com"],
-      link: "mailto:info@besamigeosyntheticservices.com"
+      details: ["info@besamigeosynthetic-services.com"],
+      link: "mailto:info@besamigeosynthetic-services.com"
     },
     {
       icon: Clock,
@@ -86,7 +87,14 @@ const Contact = () => {
   ];
 
   return (
-    <div className="pt-16">
+    <>
+      <PageMeta 
+        title="Contact Besami Geosynthetic Services - Get Your Construction Quote Today"
+        description="Contact Besami Geosynthetic Services for professional construction and engineering services in Uganda. Call +256 752 554 558, WhatsApp +256 775 980 879, or email info@besamigeosynthetic-services.com. Located in Nakasero IV, Kampala."
+        keywords="contact construction company Uganda, construction quote Kampala, HDPE liner installation contact, geosynthetic services Uganda, emergency construction services"
+        url="https://besamigeosynthetic-services.com/contact"
+      />
+      <div className="pt-24">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
@@ -315,11 +323,16 @@ const Contact = () => {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <Phone size={16} />
-                    <span className="font-semibold">Emergency Hotline: 0752 554 558</span>
+                    <a 
+                      href="tel:+256752554558" 
+                      className="font-semibold hover:text-gray-200 transition-colors"
+                    >
+                      Emergency Hotline: +256 752 554 558
+                    </a>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Mail size={16} />
-                    <span>emergency@besamigeosyntheticservices.com</span>
+                    <span>emergency@besamigeosynthetic-services.com</span>
                   </div>
                 </div>
               </div>
@@ -351,7 +364,8 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

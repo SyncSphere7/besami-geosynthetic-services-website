@@ -1,33 +1,48 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Building2, Layers, Zap, Droplets, TreePine, Shield, CheckCircle2, Clock, MapPin } from "lucide-react";
-import heroImage from "@/assets/hero-construction.jpg";
+import heroImage from "@/assets/hero-hdpe-workers.jpg";
+import PageMeta from "@/components/seo/PageMeta";
+import hdpeInstallation from "@/assets/projects/hdpe-installation-1.jpg";
+import residentialConstruction from "@/assets/projects/construction-work-1.jpg";
+import irrigationProject from "@/assets/projects/infrastructure-1.jpg";
+import geosynthetic from "@/assets/services/geosynthetic-work.jpg";
+import civilConstruction from "@/assets/services/civil-building-construction.jpg";
+import plasticWelding from "@/assets/services/plastic-welding.jpg";
+import waterproofing from "@/assets/services/waterproofing.jpg";
+import landscaping from "@/assets/services/landscaping.jpg";
+import teamWork from "@/assets/about/team-work.jpg";
 
 const Index = () => {
   const services = [
     {
       icon: Layers,
       title: "Geosynthetic Engineering",
-      description: "HDPE liners, drainage systems, and erosion control solutions"
+      description: "HDPE liners, drainage systems, and erosion control solutions",
+      image: geosynthetic
     },
     {
       icon: Building2,
       title: "Civil & Building Construction",
-      description: "Complete construction services from foundation to finishing"
+      description: "Complete construction services from foundation to finishing",
+      image: civilConstruction
     },
     {
       icon: Zap,
       title: "Plastic Welding",
-      description: "Professional HDPE and geomembrane welding for various applications"
+      description: "Professional HDPE and geomembrane welding for various applications",
+      image: plasticWelding
     },
     {
       icon: Droplets,
       title: "Waterproofing",
-      description: "Advanced waterproofing solutions for buildings and infrastructure"
+      description: "Advanced waterproofing solutions for buildings and infrastructure",
+      image: waterproofing
     },
     {
       icon: TreePine,
       title: "Landscaping",
-      description: "Exterior works and landscape design for commercial projects"
+      description: "Exterior works and landscape design for commercial projects",
+      image: landscaping
     }
   ];
 
@@ -37,30 +52,40 @@ const Index = () => {
       client: "Kampala Medical Center",
       location: "Kampala, Uganda",
       status: "Completed",
-      description: "Complete geomembrane installation for waste management system"
+      description: "Complete geomembrane installation for waste management system",
+      image: hdpeInstallation
     },
     {
-      title: "Residential Complex Development",
+      title: "Residential Complex Development", 
       client: "Pearl Gardens Estate",
       location: "Entebbe, Uganda",
       status: "Ongoing",
-      description: "Multi-phase residential development with landscaping"
+      description: "Multi-phase residential development with landscaping",
+      image: residentialConstruction
     },
     {
       title: "Irrigation Canal Project",
-      client: "Ministry of Agriculture",
+      client: "Ministry of Agriculture", 
       location: "Eastern Region, Uganda",
       status: "Completed",
-      description: "HDPE liner installation for agricultural irrigation systems"
+      description: "HDPE liner installation for agricultural irrigation systems",
+      image: irrigationProject
     }
   ];
 
   return (
-    <div className="overflow-hidden">
+    <>
+      <PageMeta 
+        title="Besami Geosynthetic Services - Leading Construction & Engineering Company in Uganda"
+        description="Professional construction and engineering services in Uganda. Specializing in HDPE liners, geosynthetic solutions, civil construction, plastic welding, waterproofing, and landscaping. Contact us for your infrastructure needs."
+        keywords="construction company Uganda, HDPE liners Kampala, geosynthetic engineering, plastic welding services, waterproofing Uganda, civil construction, landscaping services, infrastructure development"
+        url="https://besamigeosynthetic-services.com/"
+      />
+      <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center">
+      <section className="relative h-screen flex items-center justify-center pt-20">
         <div 
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 hero-image"
           style={{ backgroundImage: `url(${heroImage})` }}
         />
         <div className="absolute inset-0 bg-gradient-hero" />
@@ -107,18 +132,30 @@ const Index = () => {
             {services.map((service, index) => (
               <div 
                 key={service.title}
-                className="bg-card p-8 rounded-xl shadow-card hover:shadow-elegant transition-all duration-300 animate-scale-in border border-border group"
+                className="bg-card rounded-xl shadow-card hover:shadow-elegant transition-all duration-300 animate-scale-in border border-border group overflow-hidden"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon size={24} className="text-white" />
+                <div className="relative h-40 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute bottom-4 left-4">
+                    <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
+                      <service.icon size={20} className="text-white" />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-heading font-semibold text-corporate-dark mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-corporate-gray leading-relaxed">
-                  {service.description}
-                </p>
+                <div className="p-6">
+                  <h3 className="text-xl font-heading font-semibold text-corporate-dark mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-corporate-gray leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -160,7 +197,15 @@ const Index = () => {
                 <ArrowRight size={16} />
               </Link>
             </div>
-            <div className="animate-scale-in">
+            <div className="animate-scale-in space-y-6">
+              <div className="relative h-64 rounded-xl overflow-hidden">
+                <img 
+                  src={teamWork} 
+                  alt="Our team at work"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              </div>
               <div className="bg-gradient-primary p-8 rounded-xl text-white">
                 <h3 className="text-2xl font-heading font-bold mb-4">Our Vision</h3>
                 <p className="text-lg leading-relaxed">
@@ -192,8 +237,13 @@ const Index = () => {
                 className="bg-card rounded-xl shadow-card hover:shadow-elegant transition-all duration-300 overflow-hidden animate-scale-in"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                  <div className="absolute top-4 right-4">
                     <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                       project.status === 'Completed' 
                         ? 'bg-green-100 text-green-800' 
@@ -212,6 +262,8 @@ const Index = () => {
                       )}
                     </span>
                   </div>
+                </div>
+                <div className="p-6">
                   <h3 className="text-xl font-heading font-semibold text-corporate-dark mb-2">
                     {project.title}
                   </h3>
@@ -284,7 +336,8 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

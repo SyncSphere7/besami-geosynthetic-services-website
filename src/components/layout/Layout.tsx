@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Navigation from "@/components/ui/navigation";
 import Footer from "@/components/ui/footer";
+import QuickContactWidget from "@/components/ui/quick-contact-widget";
 
 interface LayoutProps {
   children: ReactNode;
@@ -14,6 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
       <Footer />
+      <QuickContactWidget />
     </div>
   );
 };
