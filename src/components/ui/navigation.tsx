@@ -16,22 +16,21 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-2 sm:top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-6xl px-2 sm:px-4">
+    <nav className="fixed top-2 sm:top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-7xl px-2 sm:px-4">
       <div className="bg-white/90 sm:bg-white/80 backdrop-blur-md border border-white/20 rounded-full shadow-lg">
-        <div className="flex justify-between items-center px-4 sm:px-6 py-2 sm:py-3">
+        <div className="flex justify-between items-center px-3 sm:px-6 py-2 sm:py-3">
           {/* Logo */}
           <Link 
             to="/" 
-            className="flex items-center space-x-1 sm:space-x-2 text-sm sm:text-lg font-heading font-bold text-corporate-dark hover:text-corporate-blue transition-colors"
+            className="flex items-center space-x-2 text-sm sm:text-lg font-heading font-bold text-corporate-dark hover:text-corporate-blue transition-colors"
           >
             <img 
               src="/lovable-uploads/78272ef2-dfb5-4df0-a656-da2079b3ec8e.png" 
               alt="Besami Geosynthetic Services Logo" 
-              className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10"
+              className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0"
             />
             <div className="flex flex-col leading-tight">
-              <span className="hidden sm:block text-xs sm:text-sm lg:text-base">Besami Geosynthetic Services</span>
-              <span className="sm:hidden text-sm">Besami</span>
+              <span className="text-xs sm:text-sm lg:text-base whitespace-nowrap">Besami Geosynthetic Services</span>
             </div>
           </Link>
 
