@@ -50,22 +50,22 @@ const QuickContactWidget = () => {
   ];
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50">
       {/* Contact Options */}
       {isOpen && (
-        <div className="mb-4 space-y-2 animate-fade-in">
+        <div className="mb-3 sm:mb-4 space-y-2 animate-fade-in">
           {contactOptions.map((option, index) => (
             <a
               key={option.label}
               href={option.action}
               target={option.external ? "_blank" : undefined}
               rel={option.external ? "noopener noreferrer" : undefined}
-              className={`flex items-center space-x-3 p-3 rounded-lg shadow-lg border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 ${option.bgColor} group`}
+              className={`flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 rounded-lg shadow-lg border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 ${option.bgColor} group min-w-[200px] sm:min-w-[220px]`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <option.icon size={20} className={option.color} />
+              <option.icon size={18} className={`${option.color} sm:w-5 sm:h-5`} />
               <div className="flex flex-col">
-                <span className="text-sm font-medium text-gray-900">{option.label}</span>
+                <span className="text-xs sm:text-sm font-medium text-gray-900">{option.label}</span>
                 <span className="text-xs text-gray-600">{option.text}</span>
               </div>
             </a>
@@ -105,16 +105,16 @@ const QuickContactWidget = () => {
       {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
+        className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
           isOpen 
             ? "bg-gray-600 hover:bg-gray-700" 
             : "bg-gradient-primary hover:shadow-elegant"
         }`}
       >
         {isOpen ? (
-          <X size={24} className="text-white" />
+          <X size={20} className="text-white sm:w-6 sm:h-6" />
         ) : (
-          <Headphones size={24} className="text-white" />
+          <Headphones size={20} className="text-white sm:w-6 sm:h-6" />
         )}
       </button>
     </div>

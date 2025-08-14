@@ -83,18 +83,18 @@ const Index = () => {
       />
       <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center pt-20">
+      <section className="relative min-h-screen h-screen flex items-center justify-center pt-16 sm:pt-20">
         <div 
           className="absolute inset-0 hero-image"
           style={{ backgroundImage: `url(${heroImage})` }}
         />
         <div className="absolute inset-0 bg-gradient-hero" />
         
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
+        <div className="relative z-10 text-center text-white px-4 sm:px-6 max-w-5xl mx-auto animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 sm:mb-6 leading-tight">
             Shaping Tomorrow's Infrastructure, Today.
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-200 leading-relaxed max-w-4xl mx-auto">
             Leading construction and engineering company specializing in innovative geosynthetic solutions, 
             civil construction, and comprehensive infrastructure development.
           </p>
@@ -128,31 +128,31 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => (
               <div 
                 key={service.title}
                 className="bg-card rounded-xl shadow-card hover:shadow-elegant transition-all duration-300 animate-scale-in border border-border group overflow-hidden"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="relative h-40 overflow-hidden">
+                <div className="relative h-36 sm:h-40 overflow-hidden">
                   <img 
                     src={service.image} 
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4">
-                    <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                      <service.icon size={20} className="text-white" />
+                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
+                      <service.icon size={16} className="text-white sm:w-5 sm:h-5" />
                     </div>
                   </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-heading font-semibold text-corporate-dark mb-3">
+                <div className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-heading font-semibold text-corporate-dark mb-2 sm:mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-corporate-gray leading-relaxed">
+                  <p className="text-sm sm:text-base text-corporate-gray leading-relaxed">
                     {service.description}
                   </p>
                 </div>
@@ -230,52 +230,53 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {projects.map((project, index) => (
               <div 
                 key={project.title}
                 className="bg-card rounded-xl shadow-card hover:shadow-elegant transition-all duration-300 overflow-hidden animate-scale-in"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-40 sm:h-48 overflow-hidden">
                   <img 
                     src={project.image} 
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   />
-                  <div className="absolute top-4 right-4">
-                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4">
+                    <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium ${
                       project.status === 'Completed' 
                         ? 'bg-green-100 text-green-800' 
                         : 'bg-blue-100 text-blue-800'
                     }`}>
                       {project.status === 'Completed' ? (
                         <div className="flex items-center space-x-1">
-                          <CheckCircle2 size={14} />
-                          <span>Completed</span>
+                          <CheckCircle2 size={12} className="sm:w-3.5 sm:h-3.5" />
+                          <span className="hidden sm:inline">Completed</span>
+                          <span className="sm:hidden">Done</span>
                         </div>
                       ) : (
                         <div className="flex items-center space-x-1">
-                          <Clock size={14} />
+                          <Clock size={12} className="sm:w-3.5 sm:h-3.5" />
                           <span>Ongoing</span>
                         </div>
                       )}
                     </span>
                   </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-heading font-semibold text-corporate-dark mb-2">
+                <div className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-heading font-semibold text-corporate-dark mb-2">
                     {project.title}
                   </h3>
                   <div className="flex items-center space-x-2 text-corporate-gray mb-2">
-                    <Building2 size={16} />
-                    <span className="text-sm">{project.client}</span>
+                    <Building2 size={14} className="sm:w-4 sm:h-4" />
+                    <span className="text-xs sm:text-sm">{project.client}</span>
                   </div>
-                  <div className="flex items-center space-x-2 text-corporate-gray mb-4">
-                    <MapPin size={16} />
-                    <span className="text-sm">{project.location}</span>
+                  <div className="flex items-center space-x-2 text-corporate-gray mb-3 sm:mb-4">
+                    <MapPin size={14} className="sm:w-4 sm:h-4" />
+                    <span className="text-xs sm:text-sm">{project.location}</span>
                   </div>
-                  <p className="text-corporate-gray leading-relaxed">
+                  <p className="text-sm sm:text-base text-corporate-gray leading-relaxed">
                     {project.description}
                   </p>
                 </div>

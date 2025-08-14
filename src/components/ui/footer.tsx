@@ -6,9 +6,9 @@ const Footer = () => {
   return (
     <footer className="bg-corporate-dark text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Info */}
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1 sm:col-span-2 lg:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <img 
                 src="/lovable-uploads/78272ef2-dfb5-4df0-a656-da2079b3ec8e.png" 
@@ -81,11 +81,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
+        <div className="border-t border-gray-700 mt-6 sm:mt-8 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center">
+          <p className="text-gray-400 text-xs sm:text-sm text-center sm:text-left">
             © 2025 Besami Geosynthetic Services. All rights reserved.
           </p>
-          <div className="flex items-center space-x-4 mt-4 sm:mt-0">
+          <div className="flex items-center space-x-3 sm:space-x-4 mt-3 sm:mt-0">
             <a 
               href="https://www.facebook.com/people/Besami-Geosynthetic-Services/61566779156717/" 
               target="_blank" 

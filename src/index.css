@@ -129,4 +129,27 @@ All colors MUST be HSL.
     background-position: center;
     background-repeat: no-repeat;
   }
+  
+  /* Mobile optimizations */
+  @media (max-width: 640px) {
+    .hero-image {
+      background-attachment: scroll; /* Better performance on mobile */
+    }
+  }
+  
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Touch-friendly interactive elements */
+  @media (hover: none) and (pointer: coarse) {
+    .hover\:scale-105:hover {
+      transform: none;
+    }
+    
+    .group:hover .group-hover\:scale-105 {
+      transform: none;
+    }
+  }
 }

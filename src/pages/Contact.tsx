@@ -117,10 +117,10 @@ const Contact = () => {
                 className="text-center animate-scale-in"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                  <info.icon size={32} className="text-white" />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                  <info.icon size={24} className="text-white sm:w-8 sm:h-8" />
                 </div>
-                <h3 className="text-xl font-heading font-semibold text-corporate-dark mb-4">
+                <h3 className="text-lg sm:text-xl font-heading font-semibold text-corporate-dark mb-3 sm:mb-4">
                   {info.title}
                 </h3>
                 <div className="space-y-2">
